@@ -1,0 +1,50 @@
+{
+  "name": "hospital_latacunga_server",
+  "version": "1.0.0",
+  "description": "Nodejs Sequelize Server",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "cross-env NODE_ENV=development DEBUG=app:* nodemon --exec ./node_modules/.bin/babel-node src/index.js --experimental-specifier-resolution=node",
+    "start": "cross-env NODE_ENV=production ./node_modules/.bin/babel-node src/index.js &"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GrayBismuthMaster/hospital_latacunga_server.git"
+  },
+  "keywords": [
+    "PERN",
+    "Nodejs",
+    "express",
+    "postgres"
+  ],
+  "author": "Ing. Lenin Valenzuela",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GrayBismuthMaster/hospital_latacunga_server/issues"
+  },
+  "homepage": "https://github.com/GrayBismuthMaster/hospital_latacunga_server#readme",
+  "dependencies": {
+    "aws-sdk": "^2.1290.0",
+    "bcrypt": "^5.1.0",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0",
+    "multer": "^1.4.5-lts.1",
+    "pg": "^8.8.0",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.28.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.20.7",
+    "@babel/core": "^7.20.12",
+    "@babel/node": "^7.20.7",
+    "@babel/preset-env": "^7.20.2",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.0.3",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.20"
+  }
+}
