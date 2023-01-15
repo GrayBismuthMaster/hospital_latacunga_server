@@ -7,12 +7,6 @@ export const DetalleEvolucionPrescripcion = sequelize.define('detalles_evolucion
         primaryKey : true, 
         autoIncrement : true
     },
-    fecha : {
-        type : DataTypes.DATE
-    },
-    hora : {
-        type : DataTypes.TIME
-    },
     evolucion : {
         type : DataTypes.TEXT
     },

@@ -31,6 +31,8 @@ import profesionales from './routes/profesionales.routes.js'
 import especialidades from './routes/especialidades.routes.js';
 import consultorios from './routes/consultorios.routes.js'
 import historiasClinicas from './routes/historiasClinicas.routes.js';
+import evolucionesPrescripciones from './routes/evolucionesPrescripciones.routes.js';
+import detallesEvolucionesPrescripciones from './routes/detallesEvolucionesPrescripciones.routes.js';
 import uploads from './routes/uploads.routes.js'
 // import historiasClinicas from './routes/historiasClinicas.routes';
 // import solicitudesExamenes from './routes/solicitudesExamenes.routes';
@@ -81,6 +83,8 @@ app.use('/api/consultorios',consultorios);
 app.use('/api/especialidades', especialidades);
 app.use('/api/profesionales',profesionales);
 app.use('/api/historiasClinicas', historiasClinicas);
+app.use('/api/evolucionesPrescripciones', evolucionesPrescripciones);
+app.use('/api/detallesEvolucionesPrescripciones', detallesEvolucionesPrescripciones);
 
 app.use('/api/uploads', uploads)
 //OLD

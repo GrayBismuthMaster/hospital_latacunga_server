@@ -32,19 +32,23 @@ import {Rol} from '../../models/Rol.js'
         })
     // EVOLUCIONES DE HISTORIA CLINICA 1 evolucion tiene una historia clinica
         HistoriaClinica.hasOne(EvolucionPrescripcion, {
+            as : 'historia_clinica_evolucion_prescripcion',
             foreignKey : 'historia_clinica_id',
             targetId : 'id'
         })
         EvolucionPrescripcion.belongsTo(HistoriaClinica,{
+            as : 'historia_clinica_evolucion_prescripcion',
             foreignKey : 'historia_clinica_id',
             sourceKey : 'id'
         })
     // EVOLUCION PRESCRIPCION TIENE VARIOS DETALLES EVOLUCION PRESCRIPCION
         EvolucionPrescripcion.hasMany(DetalleEvolucionPrescripcion, {
+            as : 'evolucion_prescripcion',
             foreignKey : 'id_evolucion_prescripcion',
             targetId : 'id'
         })
         DetalleEvolucionPrescripcion.belongsTo(EvolucionPrescripcion, {
+            as : 'evolucion_prescripcion',
             foreignKey : 'id_evolucion_prescripcion',
             sourceKey : 'id'
         })
@@ -95,19 +99,45 @@ import {Rol} from '../../models/Rol.js'
         })
     //UN USUARIO TIENE VARIAS HISTORIAS CLINICAS
         Usuario.hasMany(HistoriaClinica,{
+            as : 'usuario_historia_clinica',
             foreignKey : 'id_usuario_historia_clinica',
             targetId : 'id'
         })
         HistoriaClinica.belongsTo(Usuario,{
+            as : 'usuario_historia_clinica',
             foreignKey : 'id_usuario_historia_clinica',
             sourceId: 'id'
         })
     //UN PROFESIONAL TIENE VARIAS HISTORIAS CLINICAS
         Profesional.hasMany(HistoriaClinica, {
+            as : 'profesional_historia_clinica',
             foreignKey : 'id_profesional_historia_clinica',
             targetId : 'id'
         });
         HistoriaClinica.belongsTo(Profesional,{
+            as : 'profesional_historia_clinica',
             foreignKey : 'id_profesional_historia_clinica',
+            sourceId : 'id'
+        })
+    //EVOLUCION PRESCRIPCION ID DE USUARIO
+        Usuario.hasOne(EvolucionPrescripcion, {
+            as : 'usuario_evolucion_prescripcion',
+            foreignKey : 'id_usuario_evolucion_prescripcion',
+            targetId : 'id'
+        });
+        EvolucionPrescripcion.belongsTo(Usuario, {
+            as : 'usuario_evolucion_prescripcion',
+            foreignKey : 'id_usuario_evolucion_prescripcion',
+            sourceId : 'id'
+        })
+    //EVOLUCION PRESCRIPCION ESTABLECIMIENTO
+        Consultorio.hasOne(EvolucionPrescripcion, {
+            as : 'consultorio_evolucion_prescripcion',
+            foreignKey : 'id_consultorio_evolucion_prescripcion',
+            targetId : 'id'
+        });
+        EvolucionPrescripcion.belongsTo(Consultorio, {
+            as : 'consultorio_evolucion_prescripcion',
+            foreignKey : 'id_consultorio_evolucion_prescripcion',
             sourceId : 'id'
         })

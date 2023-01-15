@@ -3,6 +3,7 @@ import {Consultorio} from '../models/Consultorio.js'
 import {Profesional} from '../models/Profesional.js'
 import dotenv from 'dotenv';
 import { HistoriaClinica } from '../models/HistoriaClinica.js';
+import { Usuario } from '../models/Usuario.js';
 dotenv.config({path : 'variables.env'})
 
 export const createEspecialidad = async (req, res) =>{
@@ -168,7 +169,15 @@ const obtenerHistoriasClinicasEspecialidad = async(id)=>{
             { 
                 model: Especialidad, 
                 as: 'especialidad_historia_clinica' 
-            }   
+            },
+            { 
+                model: Usuario, 
+                as: 'usuario_historia_clinica' 
+            },
+            { 
+                model: Profesional, 
+                as: 'profesional_historia_clinica' 
+            },
         ], 
     });
     return historiasClinicasEspecialidad;

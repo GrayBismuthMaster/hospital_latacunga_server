@@ -7,31 +7,7 @@ export const HistoriaClinica = sequelize.define('historias_clinicas',{
         primaryKey : true, 
         autoIncrement : true
     },
-    primer_nombre : {
-        type : DataTypes.TEXT,
-    },
-    segundo_nombre : {
-        type : DataTypes.TEXT
-    },
-    apellido_paterno : {
-        type : DataTypes.TEXT
-    },
-    apellido_materno : {
-        type : DataTypes.TEXT,
-    },
-    cedula_identidad : {
-        type : DataTypes.TEXT,
-    },
-    // sexo : {
-    //     type : DataTypes.ENUM('M', 'F'),
-    // },
-    fecha_nacimiento : {
-        type : DataTypes.DATE
-    },
-    edad : {
-        type : DataTypes.DATE,
-        
-    },
+   
     codigo : {
         type : DataTypes.TEXT
     },
@@ -54,7 +30,7 @@ export const HistoriaClinica = sequelize.define('historias_clinicas',{
         type : DataTypes.DATE
     },
     signos_vitales_antropometria_temperatura : {
-        type : DataTypes.INTEGER
+        type : DataTypes.TEXT
     },
     signos_vitales_antropometria_presion_arterial : {
         type : DataTypes.TEXT
@@ -63,10 +39,10 @@ export const HistoriaClinica = sequelize.define('historias_clinicas',{
         type : DataTypes.TEXT
     },
     signos_vitales_antropometria_peso : {
-        type : DataTypes.FLOAT
+        type : DataTypes.TEXT
     },
     signos_vitales_antropometria_talla : {
-        type : DataTypes.FLOAT
+        type : DataTypes.TEXT 
     },
     examen_fisico_regional : {
         type : DataTypes.ARRAY(DataTypes.JSON)
