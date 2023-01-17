@@ -191,6 +191,7 @@ const obtenerUsuarios =async  ()=>{
 }
 
 const usuarioConPopulate = async (id)=>{
+    
     const usuarioId = await Usuario.findOne({
         include: [ 
             { 

@@ -5,7 +5,7 @@ import {HistoriaClinica} from '../../models/HistoriaClinica.js';
 import {DetalleEvolucionPrescripcion} from '../../models/DetalleEvolucionPrescripcion.js';
 import { Especialidad } from "../../models/Especialidad.js";
 import { Profesional } from "../../models/Profesional.js";
-import {ReservaCitas} from '../../models/ReservaCitas.js'
+import {ReservaCita} from '../../models/ReservaCita.js'
 import { Usuario } from "../../models/Usuario.js";
 import {Rol} from '../../models/Rol.js'
 //UNA HISTORIA CLINICA TIENE UN MEDICO, UNA ESPECIALIDAD
@@ -53,28 +53,44 @@ import {Rol} from '../../models/Rol.js'
             sourceKey : 'id'
         })
     //RESERVA DE CITAS ESPECIALIDAD, MEDICO, CONSULTORIO FECHA, HORA
-        Especialidad.hasOne(ReservaCitas, {
-            foreignKey : 'id_especialidad',
+        Especialidad.hasOne(ReservaCita, {
+            as : 'especialidad_reserva_cita',
+            foreignKey : 'id_especialidad_reserva_cita',
             targetId : 'id'
         })
-        ReservaCitas.belongsTo(Especialidad, {
-            foreignKey : 'id_especialidad',
+        ReservaCita.belongsTo(Especialidad, {
+            as : 'especialidad_reserva_cita',
+            foreignKey : 'id_especialidad_reserva_cita',
             sourceId : 'id'
         })
-        Profesional.hasOne(ReservaCitas, {
-            foreignKey : 'id_profesional',
+        Profesional.hasOne(ReservaCita, {
+            as : 'profesional_reserva_cita',
+            foreignKey : 'id_profesional_reserva_cita',
             targetId : 'id'
         })
-        ReservaCitas.belongsTo(Profesional, {
-            foreignKey : 'id_profesional',
+        ReservaCita.belongsTo(Profesional, {
+            as : 'profesional_reserva_cita',
+            foreignKey : 'id_profesional_reserva_cita',
             sourceId : 'id'
         })
-        Consultorio.hasOne(ReservaCitas, {
-            foreignKey : 'id_consultorio',
+        Consultorio.hasOne(ReservaCita, {
+            as : 'consultorio_reserva_cita',
+            foreignKey : 'id_consultorio_reserva_cita',
             targetId : 'id'
         })
-        ReservaCitas.belongsTo(Consultorio,{
-            foreignKey : 'id_consultorio',
+        ReservaCita.belongsTo(Consultorio,{
+            as : 'consultorio_reserva_cita',
+            foreignKey : 'id_consultorio_reserva_cita',
+            sourceId : 'id'
+        })
+        Usuario.hasMany(ReservaCita,{
+            as : 'usuario_reserva_cita',
+            foreignKey : 'id_usuario_reserva_cita',
+            targetId : 'id'
+        });
+        ReservaCita.belongsTo(Usuario,{
+            as : 'usuario_reserva_cita',
+            foreignKey : 'id_usuario_reserva_cita',
             sourceId : 'id'
         })
     //UN USUARIO PUEDE TENER UN ROL RELACION

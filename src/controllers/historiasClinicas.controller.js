@@ -56,7 +56,7 @@ export const createHistoriaClinica = async (req, res) =>{
            res.status(202)
            .send({
                 message:"Creación completa",
-                datosHistoriaClinicaCreado : savedHistoriaClinica,
+                datosHistoriaClinicaCreado : await obtenerHistoriaClinicaById(savedHistoriaClinica.id),
             })
         } catch (error) {
             res.status(500).json({"error":"Algo ha pasado mal :c", "descripcion" : error})
@@ -249,4 +249,30 @@ const obtenerEvolucionesPrescripcionesHistoriaClinica =async  (id)=>{
         }
     });
     return evolucionesPrescripcionesHistoriaClinica;
+}
+const obtenerHistoriaClinicaById = async (id) =>{
+    try {
+        const historiaClinica = await HistoriaClinica.findOne({    
+            include: [ 
+                { 
+                    model: Especialidad, 
+                    as: 'especialidad_historia_clinica' 
+                },
+                { 
+                    model: Usuario, 
+                    as: 'usuario_historia_clinica' 
+                },
+                { 
+                    model: Profesional, 
+                    as: 'profesional_historia_clinica' 
+                },
+            ], 
+            where : {
+                id
+            }
+        });
+        return historiaClinica;
+    } catch (error) {
+        return error;
+    }
 }

@@ -1,6 +1,9 @@
 import {EvolucionPrescripcion} from '../models/EvolucionPrescripcion.js'
 import dotenv from 'dotenv';
 import { DetalleEvolucionPrescripcion } from '../models/DetalleEvolucionPrescripcion.js';
+import { Usuario } from '../models/Usuario.js';
+import { Consultorio } from '../models/Consultorio.js';
+import { HistoriaClinica } from '../models/HistoriaClinica.js';
 dotenv.config({path : 'variables.env'})
 
 export const createEvolucionPrescripcion = async (req, res) =>{
@@ -21,7 +24,7 @@ export const createEvolucionPrescripcion = async (req, res) =>{
            res.status(202)
            .send({
                 message:"Creación completa",
-                datosEvolucionPrescripcionCreado : savedEvolucionPrescripcion,
+                datosEvolucionPrescripcionCreado :await obtenerEvolucionPrescripcionById( savedEvolucionPrescripcion.id),
             })
         } catch (error) {
             res.status(500).json({"error":"Algo ha pasado mal :c", "descripcion" : error})
@@ -123,4 +126,31 @@ const obtenerDetallesEvolucionesPrescripciones =async  (id)=>{
         }
     });
     return detallesEvolucionPrescripcion;
+}
+
+const obtenerEvolucionPrescripcionById = async (id) =>{
+    try {
+        const evolucionPrescripcion = await EvolucionPrescripcion.findOne({
+            include : [
+                {
+                    model : Usuario,
+                    as : 'usuario_evolucion_prescripcion'
+                },
+                {
+                    model : Consultorio,
+                    as : 'consultorio_evolucion_prescripcion'
+                },
+                {
+                    model : HistoriaClinica,
+                    as : 'historia_clinica_evolucion_prescripcion'
+                }
+            ],
+            where : {
+                id
+            }
+        });
+        return evolucionPrescripcion;
+    } catch (error) {
+        return error;
+    }
 }

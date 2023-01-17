@@ -180,5 +180,6 @@ const obtenerHistoriasClinicasEspecialidad = async(id)=>{
             },
         ], 
     });
+    
     return historiasClinicasEspecialidad;
 }
