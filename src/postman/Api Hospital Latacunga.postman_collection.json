@@ -1,0 +1,1217 @@
+{
+	"info": {
+		"_postman_id": "c9a223fe-90db-421e-8abe-82dd9fa70abf",
+		"name": "Api Hospital Latacunga",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13054407"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "getUsersGET",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{enviroment}}:{{port}}/api/usuarios",
+							"protocol": "http",
+							"host": [
+								"{{enviroment}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createUserPOST",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"primer_nombre\":\"user\",\r\n    \"segundo_nombre\" : \"user\",\r\n    \"apellido_paterno\" : \"usuario\",\r\n    \"apellido_materno\" : \"de la clinica\",\r\n    \"cedula_identidad\":\"1720413212\",\r\n    \"fecha_nacimiento\":\"1998-02-01\",\r\n    \"sexo\":\"M\",\r\n    \"telefono\":\"092303223\",\r\n    \"estado\":true,\r\n    \"imagen\":\"https://hosteleriaecuador.com/wp-content/uploads/gueridon.jpg\",\r\n    \"username\":\"user\",\r\n    \"email\":\"user@user.com\",\r\n    \"password\":\"user123\",\r\n    \"id_rol\" : 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{enviroment}}:{{port}}/api/usuarios",
+							"protocol": "http",
+							"host": [
+								"{{enviroment}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "editUserPUT",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"user3\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{enviroment}}:{{port}}/api/usuarios/4",
+							"protocol": "http",
+							"host": [
+								"{{enviroment}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"usuarios",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteUserDELETE",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://{{enviroment}}:{{port}}/api/usuarios/2",
+							"protocol": "http",
+							"host": [
+								"{{enviroment}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"usuarios",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getUserGet",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{enviroment}}:{{port}}/api/usuarios/rol/2",
+							"protocol": "http",
+							"host": [
+								"{{enviroment}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"usuarios",
+								"rol",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "api/auth/signIn",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"admin@admin.com\",\r\n  \"password\" : \"admin123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{enviroment}}:{{port}}/api/auth/signin",
+							"protocol": "http",
+							"host": [
+								"{{enviroment}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"auth",
+								"signin"
+							],
+							"query": [
+								{
+									"key": "nombre",
+									"value": "Lenin",
+									"disabled": true
+								},
+								{
+									"key": "cedula",
+									"value": "1720412235",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/auth/signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"nombre\": \"MarcoNormal\", \r\n        \"cedula\": \"1708721352\",\r\n        \"fecha_nacimiento\" : \"2021/10/22\",\r\n        \"sexo\" : \"1\",\r\n        \"estado_civil\" : \"Casado\",\r\n        \"religion\": \"Cruzadas\", \r\n        \"ocupacion\" : \"Trabajador\", \r\n        \"lugar_nacimiento\" : \"Quito\", \r\n        \"residencia\" : \"Palmitoe\", \r\n        \"domicilio\" : \"Por ahí\", \r\n        \"telefono\" : \"093321231\", \r\n        \"estado\" : \"1\", \r\n        \"imagen\" : \"http.LAdsasdas\", \r\n        \"username\" : \"normal\", \r\n        \"email\" : \"normal@dadasd.com\", \r\n        \"password\" : \"normal123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/auth/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Profesionales",
+			"item": [
+				{
+					"name": "getProfesionalesGET",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{enviroment}}:{{port}}/api/profesionales",
+							"protocol": "http",
+							"host": [
+								"{{enviroment}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"profesionales"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createProfesionalPOST",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre_profesional\":\"Marco\",\r\n    \"apellido_profesional\":\"Salazar\",\r\n    \"cedula_profesional\":\"172012121\",\r\n    \"telefono_profesional\":\"0820112\",\r\n    \"direccion_profesional\":\"LAtacunga\",\r\n    \"correo_profesional\":\"profesional@profesional.com\",\r\n    \"imagen_profesional\":\"https://i.stack.imgur.com/peaZA.png\",\r\n    \"estado_profesional\":true,\r\n    \"especialidad_id\":6\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{enviroment}}:{{port}}/api/profesionales",
+							"protocol": "http",
+							"host": [
+								"{{enviroment}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"profesionales"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "editProfesionalPUT",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre_profesional\": \"Pedrito\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{enviroment}}:{{port}}/api/profesionales/1",
+							"protocol": "http",
+							"host": [
+								"{{enviroment}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"profesionales",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteProfesionalDELETE",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://{{enviroment}}:{{port}}/api/profesionales/2",
+							"protocol": "http",
+							"host": [
+								"{{enviroment}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"profesionales",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getProfesionalGet",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{enviroment}}:{{port}}/api/profesionales/2",
+							"protocol": "http",
+							"host": [
+								"{{enviroment}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"profesionales",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Especialidades",
+			"item": [
+				{
+					"name": "getEspecialidadesGET",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{enviroment}}:{{port}}/api/especialidades",
+							"protocol": "http",
+							"host": [
+								"{{enviroment}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"especialidades"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createEspecialidadPOST",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre_especialidad\":\"Dermatología\",\r\n    \"estado_especialidad\":true,\r\n    \"consultorio_id\":2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{enviroment}}:{{port}}/api/especialidades",
+							"protocol": "http",
+							"host": [
+								"{{enviroment}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"especialidades"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "editEspecialidadPUT",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre_especialidad\": \"Odontología\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{enviroment}}:{{port}}/api/especialidades/1",
+							"protocol": "http",
+							"host": [
+								"{{enviroment}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"especialidades",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteEspecialidadDELETE",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://{{enviroment}}:{{port}}/api/especialidades/3",
+							"protocol": "http",
+							"host": [
+								"{{enviroment}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"especialidades",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getEspecialidadGet",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{enviroment}}:{{port}}/api/especialidades/2",
+							"protocol": "http",
+							"host": [
+								"{{enviroment}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"especialidades",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getProfesionalesEspecialidadGET",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{enviroment}}:{{port}}/api/especialidades/6/profesionales",
+							"protocol": "http",
+							"host": [
+								"{{enviroment}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"especialidades",
+								"6",
+								"profesionales"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Consultorios",
+			"item": [
+				{
+					"name": "getConsultoriosGET",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{enviroment}}:{{port}}/api/consultorios",
+							"protocol": "http",
+							"host": [
+								"{{enviroment}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"consultorios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createConsultorioPOST",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre_consultorio\":\"Hospital Latacunga\",\r\n    \"descripcion_consultorio\" : \"\",\r\n    \"imagen_consultorio\" : \"\",\r\n    \"direccion_consultorio\":\"Latacunga\",\r\n    \"horario_atencion_consultorio\":\"07:00-14:00 15:00-22:00\",\r\n    \"estado_consultorio\":true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{enviroment}}:{{port}}/api/consultorios",
+							"protocol": "http",
+							"host": [
+								"{{enviroment}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"consultorios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "editConsultorioPUT",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre_consultorio\": \"Hospital de especialidades Latacunga\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{enviroment}}:{{port}}/api/consultorios/1",
+							"protocol": "http",
+							"host": [
+								"{{enviroment}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"consultorios",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteConsultorioDELETE",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://{{enviroment}}:{{port}}/api/consultorios/1",
+							"protocol": "http",
+							"host": [
+								"{{enviroment}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"consultorios",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getConsultorioGet",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{enviroment}}:{{port}}/api/consultorios/1",
+							"protocol": "http",
+							"host": [
+								"{{enviroment}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"consultorios",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getEspecialidadesConsultorioGET",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{enviroment}}:{{port}}/api/consultorios/2/especialidades",
+							"protocol": "http",
+							"host": [
+								"{{enviroment}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"consultorios",
+								"2",
+								"especialidades"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "HistoriasClinicas",
+			"item": [
+				{
+					"name": "getHistoriasClinicasGET",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{enviroment}}:{{port}}/api/historiasClinicas",
+							"protocol": "http",
+							"host": [
+								"{{enviroment}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"historiasClinicas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createHistoriaClinicaPOST",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"primer_nombre\":\"Marco\",\r\n    \"segundo_nombre\":\"Pedro\",\r\n    \"apellido_paterno\":\"Salazar\",\r\n    \"apellido_materno\":\"Ramado\",\r\n    \"cedula_identidad\":\"172122112\",\r\n    \"fecha_nacimiento\":\"1998-12-06\",\r\n    \"codigo\":\"E17521\",\r\n    \"motivo_consulta\":\"\",\r\n    \"antecedentes_personales\":\"\",\r\n    \"antecedentes_familiares\":\"\",\r\n    \"enfermedad_actual\":\"\",\r\n    \"revision_actual_organos_sistemas\":\"\",\r\n    \"revision_actual_organos_sistemas_sentidos\":\"\",\r\n    \"revision_actual_organos_sistemas_respiratorio\":\"\",\r\n    \"revision_actual_organos_sistemas_cardiovascular\":\"\",\r\n    \"revision_actual_organos_sistemas_digestivo\":\"\",\r\n    \"revision_actual_organos_sistemas_dental\":\"\",\r\n    \"revision_actual_organos_sistemas_urinario\":\"\",\r\n    \"revision_actual_organos_sistemas_musculo_esqueletico\":\"\",\r\n    \"revision_actual_organos_sistemas_endocrinico\":\"\",\r\n    \"revision_actual_organos_sistemas_hemo_linfaticos\":\"\",\r\n    \"revision_actual_organos_sistemas_nervioso\":\"\",\r\n    \"signos_vitales_antropometria_fecha_medicion\":\"\",\r\n    \"signos_vitales_antropometria_temperatura\":\"\",\r\n    \"signos_vitales_antropometria_presion_arterial\":\"\",\r\n    \"signos_vitales_antropometria_pulso\":\"\",\r\n    \"signos_vitales_antropometria_peso\":\"\",\r\n    \"signos_vitales_antropometria_talla\":\"\",\r\n    \"examen_fisico_regional_cabeza\":\"\",\r\n    \"examen_fisico_regional_cuello\":\"\",\r\n    \"examen_fisico_regional_torax\":\"\",\r\n    \"examen_fisico_regional_abdomen\":\"\",\r\n    \"examen_fisico_regional_pelvis\":\"\",\r\n    \"examen_fisico_regional_extremidades\":\"\",\r\n    \"diagnostico\":\"\",\r\n    \"planes_tratamiento\":\"\",\r\n    \"firma\":\"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{enviroment}}:{{port}}/api/historiasClinicas",
+							"protocol": "http",
+							"host": [
+								"{{enviroment}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"historiasClinicas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "editHistoriaClinicaPUT",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre_profesional\": \"Pedrito\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{enviroment}}:{{port}}/api/profesionales/1",
+							"protocol": "http",
+							"host": [
+								"{{enviroment}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"profesionales",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteHistoriaClinicaDELETE",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://{{enviroment}}:{{port}}/api/profesionales/4",
+							"protocol": "http",
+							"host": [
+								"{{enviroment}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"profesionales",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getHistoriaClinicaGet",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{enviroment}}:{{port}}/api/profesionales/2",
+							"protocol": "http",
+							"host": [
+								"{{enviroment}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"profesionales",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getEvolucionesPrescripcionesHistoriaClinicaGET",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{enviroment}}:{{port}}/api/historiasClinicas/1/evolucionesPrescripciones",
+							"protocol": "http",
+							"host": [
+								"{{enviroment}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"historiasClinicas",
+								"1",
+								"evolucionesPrescripciones"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ReservasCitas",
+			"item": [
+				{
+					"name": "getReservasCitasGET",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{enviroment}}:{{port}}/api/reservasCitas",
+							"protocol": "http",
+							"host": [
+								"{{enviroment}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"reservasCitas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createReservaCitaPOST",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"primer_nombre\":\"Marco\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{enviroment}}:{{port}}/api/reservasCitas",
+							"protocol": "http",
+							"host": [
+								"{{enviroment}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"reservasCitas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "editReservaCitaPUT",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"estado_reserva\": \"ACEPTADO\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{enviroment}}:{{port}}/api/reservasCitas/2",
+							"protocol": "http",
+							"host": [
+								"{{enviroment}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"reservasCitas",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteReservaCitaDELETE",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://{{enviroment}}:{{port}}/api/reservasCitas/3",
+							"protocol": "http",
+							"host": [
+								"{{enviroment}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"reservasCitas",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getReservaCitaGet",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{enviroment}}:{{port}}/api/reservasCitas/2",
+							"protocol": "http",
+							"host": [
+								"{{enviroment}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"reservasCitas",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getReservasCitasByUserGET",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{enviroment}}:{{port}}/api/reservasCitas/user/2",
+							"protocol": "http",
+							"host": [
+								"{{enviroment}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"reservasCitas",
+								"user",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "EvolucionesPrescripciones",
+			"item": [
+				{
+					"name": "getEvolucionesPrescripcionesGET",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{enviroment}}:{{port}}/api/evolucionesPrescripciones",
+							"protocol": "http",
+							"host": [
+								"{{enviroment}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"evolucionesPrescripciones"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createEvolucionPrescripcionPOST",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"\" : \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{enviroment}}:{{port}}/api/evolucionesPrescripciones",
+							"protocol": "http",
+							"host": [
+								"{{enviroment}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"evolucionesPrescripciones"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "editEvolucionPrescripcionPUT",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre_profesional\": \"Pedrito\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{enviroment}}:{{port}}/api/evolucionesPrescripciones/1",
+							"protocol": "http",
+							"host": [
+								"{{enviroment}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"evolucionesPrescripciones",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteEvolucionesPrescripcionesDELETE",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://{{enviroment}}:{{port}}/api/evolucionesPrescripciones/1",
+							"protocol": "http",
+							"host": [
+								"{{enviroment}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"evolucionesPrescripciones",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getEvolucionPrescripcionGet",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{enviroment}}:{{port}}/api/evolucionesPrescripciones/1",
+							"protocol": "http",
+							"host": [
+								"{{enviroment}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"evolucionesPrescripciones",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getDetallesEvolucionesPrescripcionesGET",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{enviroment}}:{{port}}/api/evolucionesPrescripciones/2/detallesEvolucionesPrescripciones",
+							"protocol": "http",
+							"host": [
+								"{{enviroment}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"evolucionesPrescripciones",
+								"2",
+								"detallesEvolucionesPrescripciones"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "DetallesEvolucionesPrescripciones",
+			"item": [
+				{
+					"name": "getDetallesEvolucionesPrescripcionesGET",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{enviroment}}:{{port}}/api/detallesEvolucionesPrescripciones",
+							"protocol": "http",
+							"host": [
+								"{{enviroment}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"detallesEvolucionesPrescripciones"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createDetalleEvolucionPrescripcionPOST",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"\" : \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{enviroment}}:{{port}}/api/detallesEvolucionesPrescripciones",
+							"protocol": "http",
+							"host": [
+								"{{enviroment}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"detallesEvolucionesPrescripciones"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "editDetalleEvolucionPrescripcionPUT",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre_profesional\": \"Pedrito\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{enviroment}}:{{port}}/api/detallesEvolucionesPrescripciones/1",
+							"protocol": "http",
+							"host": [
+								"{{enviroment}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"detallesEvolucionesPrescripciones",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteEvolucionesPrescripcionesDELETE",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://{{enviroment}}:{{port}}/api/detallesEvolucionesPrescripciones/1",
+							"protocol": "http",
+							"host": [
+								"{{enviroment}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"detallesEvolucionesPrescripciones",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "enviroment",
+			"value": "localhost",
+			"type": "string"
+		},
+		{
+			"key": "port",
+			"value": "5001",
+			"type": "string"
+		}
+	]
+}
