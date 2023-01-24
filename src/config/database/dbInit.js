@@ -12,7 +12,7 @@ export const dbInit =async ()=>{
         password: "postgres",
         host: "localhost",
         database: "postgres",
-        port : '5433'
+        port : '5432'
       });
       
       await client.connect();

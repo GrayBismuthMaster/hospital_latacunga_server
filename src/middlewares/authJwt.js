@@ -17,6 +17,7 @@ export const verifyToken = async (req, res, next) =>{
         next();
         */
        const accessToken = req.cookies.accessToken;
+       console.log('token desde mobile',accessToken);
        const decoded = jwt.verify(accessToken, process.env.ACCESSTOKEN);
        req.userId = decoded.id;
        const user = await Usuario.findByPk(req.userId);
@@ -70,13 +71,15 @@ export const verifyTokenReturnUser = async (req, res) =>{
         next();
         */
        const accessToken = req.headers["x-access-token"];
-       console.log('Tojen desde server verificando')
+       console.log('Token desde server verificando')
        console.log(accessToken);
        const decoded = jwt.verify(accessToken, process.env.ACCESSTOKEN);
        req.userId = decoded.id;
        const user = await Usuario.findByPk(req.userId);
        if(!user) return res.status(404).json({message: "Usuario no encontrado"});
-       return res.status(200).json({success: true, user: user, token: req.cookies.accessToken});
+    //    return res.status(200).json({success: true, user: user, token: req.cookies.accessToken});
+    
+    return res.status(200).json({success: true, user: user, token: accessToken});
     } catch(error){
         return res.status(401).json({success:false, message: "Token expirado"})
     } 
