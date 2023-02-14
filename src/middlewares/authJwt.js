@@ -78,8 +78,7 @@ export const verifyTokenReturnUser = async (req, res) =>{
        const user = await Usuario.findByPk(req.userId);
        if(!user) return res.status(404).json({message: "Usuario no encontrado"});
     //    return res.status(200).json({success: true, user: user, token: req.cookies.accessToken});
-    
-    return res.status(200).json({success: true, user: user, token: accessToken});
+        return res.status(200).json({success: true, user: user, token: accessToken});
     } catch(error){
         return res.status(401).json({success:false, message: "Token expirado"})
     } 

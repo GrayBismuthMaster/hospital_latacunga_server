@@ -35,6 +35,7 @@ import evolucionesPrescripciones from './routes/evolucionesPrescripciones.routes
 import detallesEvolucionesPrescripciones from './routes/detallesEvolucionesPrescripciones.routes.js';
 import reservasCitas from './routes/reservasCitas.routes.js';
 import uploads from './routes/uploads.routes.js'
+import emails from './routes/emails.routes.js';
 // import historiasClinicas from './routes/historiasClinicas.routes';
 // import solicitudesExamenes from './routes/solicitudesExamenes.routes';
 // import protocolosOperatorios from './routes/protocolosOperatorios.routes';
@@ -87,8 +88,8 @@ app.use('/api/historiasClinicas', historiasClinicas);
 app.use('/api/evolucionesPrescripciones', evolucionesPrescripciones);
 app.use('/api/detallesEvolucionesPrescripciones', detallesEvolucionesPrescripciones);
 app.use('/api/reservasCitas',reservasCitas);
-
 app.use('/api/uploads', uploads)
+app.use('/api/emails', emails);
 //OLD
 
 // app.use('/api/historiasClinicas',historiasClinicas);
